@@ -1,0 +1,38 @@
+{
+  "name": "paypal-express-checkout-simple",
+  "version": "0.1.2",
+  "description": "Simple implementation of paypal express checkout so you can quickly start using Paypal. Supports only basics to sell items.",
+  "main": "./index.js",
+  "scripts": {
+    "test": "mocha test",
+    "example": "node example/app.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visla/paypal-express-checkout"
+  },
+  "author": "Nebojsa Vislavski",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "cookie-parser": "~1.0.1",
+    "express": "^4.12.3",
+    "node-uuid": "^1.4.3",
+    "serve-favicon": "^2.2.0",
+    "underscore": "^1.8.3"
+  },
+  "bugs": {
+    "url": "https://github.com/visla/paypal-express-checkout/issues"
+  },
+  "homepage": "https://github.com/visla/paypal-express-checkout",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "paypal",
+    "express",
+    "checkout"
+  ]
+}

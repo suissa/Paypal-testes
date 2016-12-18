@@ -1,0 +1,24 @@
+{
+	"serverDefaultPort": 8889,
+	"paypal": {
+		"userid": "REPLACE-THIS",
+		"password": "REPLACE-THIS",
+		"signature": "REPLACE-THIS",
+		"receiver_email": "REPLACE-THIS",
+		"localcode": "DE"
+	},
+	"paypalrest": {
+		"port": "",
+		"client_id": "REPLACE-THIS",
+		"client_secret": "REPLACE-THIS"
+	},
+	"paypalipn":{
+		"host": "www.webmart.de",
+		"port": 80,
+		"listenport": 8888,
+		"secure": true,
+		"receiverPath": "/ipntest/paypal",
+		"ppReturnPath": "/cgi-bin/webscr",
+		"receiver_email": "REPLACE-THIS"
+	}
+}
