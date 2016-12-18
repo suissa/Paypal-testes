@@ -1,7 +1,21 @@
 'use strict';
 
 var paypal = require('paypal-rest-sdk');
-var config = {};
+// var config = {
+// 	"port" : 3000,
+// 	"api" : {
+// 		"host" : "api.sandbox.paypal.com",
+// 		"port" : "",
+// 		"client_id" : "Aa9rd9vRzn2zCkigJjNDq0wmybvWK1FLtIpP2zlCpbSTo5tGMVWMxFObZ2sMgc8A5Gwg_d-RIQwDaUbt",
+// 		"client_secret" : "6TMDORo5Q5SV8OGOzvugLcZW3nwnFFwQ2I_8P5qQq6"
+// 	}
+// };
+
+paypal.configure({
+  mode: 'sandbox', // Sandbox or live
+  client_id: 'Aa9rd9vRzn2zCkigJjNDq0wmybvWK1FLtIpP2zlCpbSTo5tGMVWMxFObZ2sMgc8A5Gwg_d-RIQwDaUbt',
+  client_secret: 'EBW7A9RA4JSRjjXK1Mlf7yz-cAndCvG7aQf4v-6TMDORo5Q5SV8OGOzvugLcZW3nwnFFwQ2I_8P5qQq6'
+});
 
 // Routes
 
@@ -14,8 +28,9 @@ exports.create = function (req, res) {
 
 	var payment = {
 		"intent": "sale",
-		"payer": {
-		},
+	  payer:{
+	    payment_method:'paypal'
+	  },
 		"transactions": [{
 			"amount": {
 				"currency": req.param('currency'),
@@ -62,7 +77,8 @@ exports.create = function (req, res) {
 exports.execute = function (req, res) {
 	var paymentId = req.session.paymentId;
 	var payerId = req.param('PayerID');
-
+	console.log('paymentId', paymentId)
+	console.log('payerId', payerId)
 	var details = { "payer_id": payerId };
 	var payment = paypal.payment.execute(paymentId, details, function (error, payment) {
 		if (error) {
@@ -81,6 +97,6 @@ exports.cancel = function (req, res) {
 // Configuration
 
 exports.init = function (c) {
-	config = c;
-	paypal.configure(c.api);
+	// config = c;
+	// paypal.configure(c.api);
 };
