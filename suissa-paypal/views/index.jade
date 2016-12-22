@@ -4,12 +4,12 @@ block content
   h1 Concierge - Pagamento de Estacionamento
 
   div#paypal
-    form(action="/api/paypal/create", method="POST")
+    form(action="/api/paypal/xp", method="GET")
       input(type='hidden', name='method', value='paypal')
       input(type='hidden', id='amount', name='amount', value='17.00')
       input(type='hidden', name='currency', value='BRL')
       input(type='hidden', id='description', name='description', value='Pagamento de estacionamento do Shopping')
-      button(type='submit') Create Payment
+      button(type='submit') Pagar
 
   //- div#creditcard
   //-   p Create a new Credit Card Payment
