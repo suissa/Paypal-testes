@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	- var payment_details = JSON.stringify(payment, null, 2);
+
+	h1 Pagamento efetuado com sucesso!
+  h2 ID do PayPal ${payment_details.id}
+	pre
+		p= payment_details
